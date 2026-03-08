@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Happy Birthday Vadina </title>
+<title>Surprise</title>
 
 <style>
 body{
@@ -18,7 +18,26 @@ body{
     color:white;
 }
 
+/* Surprise screen */
+
+#surpriseScreen{
+    text-align:center;
+}
+
+#surpriseBtn{
+    padding:20px 50px;
+    font-size:2rem;
+    border:none;
+    border-radius:40px;
+    background:#ff2e63;
+    color:white;
+    cursor:pointer;
+}
+
+/* Main content */
+
 .container{
+    display:none;
     z-index:2;
 }
 
@@ -82,19 +101,27 @@ button{
 
 <body>
 
-<div class="container">
+<!-- Surprise Button First -->
+
+<div id="surpriseScreen">
+<button id="surpriseBtn">🎁 Surprise</button>
+</div>
+
+<!-- Birthday Page -->
+
+<div class="container" id="mainContent">
 
 <h1>🎉 Happy Birthday Vadina 🎂</h1>
 
-<p>Will you accept this special birthday wish? </p>
+<p>Will you accept this special birthday wish?</p>
 
-<button id="yes">YES </button>
-<button id="no">NO </button>
+<button id="yes">YES</button>
+<button id="no">NO</button>
 
 <div id="message">
-    Many more happy returns of the day Vadina 💐 <br><br>
-    You are very special to our family 😊<br>
-    May your life be filled with happiness, love and success! 🎉
+Many more happy returns of the day Vadina 💐 <br><br>
+You are very special to our family 😊<br>
+May your life be filled with happiness, love and success! 🎉
 </div>
 
 <br>
@@ -102,18 +129,29 @@ button{
 <button id="playVoice">🔊 Vadina idi click cheyandi 😊</button>
 
 <audio id="voice">
-    <source src="audio.mp3" type="audio/mp3">
+<source src="audio.mp3" type="audio/mp3">
 </audio>
 
 </div>
 
 <script>
 
+const surpriseBtn=document.getElementById("surpriseBtn");
+const surpriseScreen=document.getElementById("surpriseScreen");
+const mainContent=document.getElementById("mainContent");
+
 const yesBtn=document.getElementById("yes");
 const noBtn=document.getElementById("no");
 const msg=document.getElementById("message");
 const playVoice=document.getElementById("playVoice");
 const voice=document.getElementById("voice");
+
+/* Show main page after surprise click */
+
+surpriseBtn.addEventListener("click",()=>{
+    surpriseScreen.style.display="none";
+    mainContent.style.display="block";
+});
 
 /* NO button runs away */
 
