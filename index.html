@@ -113,6 +113,7 @@ const noBtn=document.getElementById("no");
 const msg=document.getElementById("message");
 const playVoice=document.getElementById("playVoice");
 const voice=document.getElementById("voice");
+const question=document.getElementById("question");
 
 /* NO button runs away */
 
@@ -131,6 +132,7 @@ yesBtn.addEventListener("click",()=>{
     playVoice.style.display="inline-block";
     yesBtn.style.display="none";
     noBtn.style.display="none";
+    question.style.display="none";
 });
 
 /* play voice */
@@ -160,6 +162,3 @@ setInterval(createHeart,300);
 
 </body>
 </html>
-
-
-
